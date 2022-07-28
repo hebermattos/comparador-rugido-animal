@@ -3,12 +3,18 @@
  */
 package comparador.rugido.animal;
 
+import comparador.rugido.animal.animais.Gato;
+import comparador.rugido.animal.animais.Leao;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+     
+        ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
+
+        String tipoAnimal = comparadorRugidoAnimal.Comparar(new Gato(), new Leao());
+
+        System.out.println("Animal com maior rugido: " + tipoAnimal);
+
     }
 }

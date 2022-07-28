@@ -4,11 +4,40 @@
 package comparador.rugido.animal;
 
 import org.junit.jupiter.api.Test;
+
+import comparador.rugido.animal.animais.Gato;
+import comparador.rugido.animal.animais.Leao;
+import comparador.rugido.animal.animais.Rato;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+
+    @Test void comparador1() {
+        
+        ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
+
+        String tipoAnimal = comparadorRugidoAnimal.Comparar(new Gato(), new Leao());
+
+        assertEquals("leao", tipoAnimal);
+    }
+
+    @Test void comparador2() {
+        
+        ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
+
+        String tipoAnimal = comparadorRugidoAnimal.Comparar(new Leao(), new Rato());
+
+        assertEquals("leao", tipoAnimal);
+    }
+
+    
+    @Test void comparador3() {
+        
+        ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
+
+        String tipoAnimal = comparadorRugidoAnimal.Comparar(new Rato(), new Rato());
+
+        assertEquals("empate!", tipoAnimal);
     }
 }
