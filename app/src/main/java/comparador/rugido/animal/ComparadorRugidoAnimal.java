@@ -1,7 +1,5 @@
 package comparador.rugido.animal;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class ComparadorRugidoAnimal {
 
     public String Comparar(Animal animal1, Animal animal2) {

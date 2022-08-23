@@ -3,18 +3,28 @@
  */
 package comparador.rugido.animal;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import comparador.rugido.animal.animais.Gato;
 import comparador.rugido.animal.animais.Leao;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
      
         ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
+        Arquivo arquivo = new Arquivo();
+
+        ArrayList<String> vencedores = arquivo.buscarVencedores();
+
+        System.out.println("Vecendores ate agora: ");
+        for (String animal : vencedores) { System.out.println(animal); }
 
         String tipoAnimal = comparadorRugidoAnimal.Comparar(new Gato(), new Leao());
+        arquivo.salvarVencedor(tipoAnimal);
 
-        System.out.println("Animal com maior rugido: " + tipoAnimal);
+        System.out.println("Novo vencedor: " + tipoAnimal);
 
     }
 }
