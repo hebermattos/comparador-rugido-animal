@@ -4,25 +4,29 @@
 package comparador.rugido.animal;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import comparador.rugido.animal.animais.Gato;
 import comparador.rugido.animal.animais.Leao;
+import comparador.rugido.animal.repositorio.Banco;
+import comparador.rugido.animal.repositorio.IRepositorioVencedores;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException  {
      
         ComparadorRugidoAnimal comparadorRugidoAnimal = new ComparadorRugidoAnimal();
-        Arquivo arquivo = new Arquivo();
 
-        ArrayList<String> vencedores = arquivo.buscarVencedores();
+        IRepositorioVencedores banco = new Banco(); //ou 'new Arquivo()';
+
+        ArrayList<String> vencedores = banco.buscarVencedores();
 
         System.out.println("Vecendores ate agora: ");
         for (String animal : vencedores) { System.out.println(animal); }
 
         String tipoAnimal = comparadorRugidoAnimal.Comparar(new Gato(), new Leao());
-        arquivo.salvarVencedor(tipoAnimal);
+        banco.salvarVencedor(tipoAnimal);
 
         System.out.println("Novo vencedor: " + tipoAnimal);
 
