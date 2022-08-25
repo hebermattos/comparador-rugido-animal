@@ -25,7 +25,6 @@ public class Arquivo implements IRepositorioVencedores {
               }
               myReader.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -40,7 +39,6 @@ public class Arquivo implements IRepositorioVencedores {
             myWriter.write(System.getProperty("line.separator"));
             myWriter.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
       

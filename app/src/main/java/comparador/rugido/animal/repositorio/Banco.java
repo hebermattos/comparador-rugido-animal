@@ -1,9 +1,5 @@
 package comparador.rugido.animal.repositorio;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -33,13 +29,11 @@ public class Banco implements IRepositorioVencedores {
             con.close();
 
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
+
         return listaVencedores;
 
     }
@@ -59,10 +53,8 @@ public class Banco implements IRepositorioVencedores {
             con.close();
 
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
